@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "run",
+            "type": "python",
+            "pythonExecutablePath": "/Library/Frameworks/Python.framework/Versions/3.10/bin",
+            "scriptPath": "/Users/fabianrodriguez/Desktop/cs_mastery/easy/valid_palindrome",
+            "parameters": []
+        }
+    ]
+}
