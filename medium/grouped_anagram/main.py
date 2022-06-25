@@ -29,10 +29,20 @@ def hash_group_anagram(array):
         temp = [0] * 26
         for letter in word:
             temp[ord(letter) - ord('a')] = temp[ord(letter) - 97] + 1
-        
         hashmap[tuple(temp)].append(word)
+        print(temp)
+        break
 
     print(hashmap.values())
 
+# hash_group_anagram(["dog"])
 
+import string
+a = string.ascii_lowercase
 
+d = defaultdict()
+
+for i, l in enumerate(list(a)):
+    d[i] = l
+
+print(d)
