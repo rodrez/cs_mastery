@@ -8,4 +8,4 @@ class Solution:
 
         left, right = Null, 1
         while right:
-            next =
+            next = ""
