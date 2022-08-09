@@ -1,31 +1,34 @@
-def my_sqrt(x: int) -> int:
-    r = x
-    while r*r > x:
+from typing import List
 
-        r = (r + x/r) // 2
-        print("Step 2: ", r)
-    return int(r)
+def topKFrequent(nums: List[int], k: int) -> List[int]:
 
-def binary_my_sqrt(x):
-    left, right = 0, x
+    hash1 = {}
 
-    while left <= right:
-        print("Left: ", left)
-        print("Right: ", right)
+    for num in nums:
+        hash1[num] = hash1.get(num, 0) + 1
+
+    results = {num: [] for num in range(len(nums)+1) }
+
+    for key, value in hash1.items():
+        results[value].append(key)
+
+    end = [] * k
+    for i in range(len(results.values()) -1, -1, -1):
+        print(results.values())
+        for j in results.values()[0][i]:
+            print(j)
+            if end < k:
+                end.append(j)
 
 
-        mid = (left + right) // 2
-        print("Mid: ", mid)
-        if mid * mid > x:
-            right = mid - 1
-        elif mid * mid < x:
-            left = mid + 1
-        else:
-            return mid
 
-    # When there is no perfect square, hi is the the value on the left
-    # of where it would have been (rounding down). If we were rounding up,
-    # we would return lo
-    return left
 
-print(binary_my_sqrt(99))
+topKFrequent(nums = [1,1,1,2,2,3,4,4,4], k = 2)
+
+
+
+# Input: nums = [1,1,1,2,2,3], k = 2
+# Output: [1,2]
+
+# Input: nums = [1], k = 1
+# Output: [1]
